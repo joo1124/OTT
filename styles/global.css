@@ -128,14 +128,9 @@ body {
   background-color: black;
   color: white;
   font-size: 18px;
-  padding-top: 120px; /* 네비 높이 + top(20px) 만큼 여백 확보 */
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }

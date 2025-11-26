@@ -1,28 +1,166 @@
 .nav {
-  background-color: #2d2d2d;
+  background: transparent;
   position: fixed;
-  width: 30%;
-  margin: 0 auto;
-  top: 20px;
-  border-radius: 50px;
-  padding: 20px 0px;
-  left: 50%;
-  z-index: 10;
-  transform: translateX(-50%);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 10px 40px;
+  backdrop-filter: none;
 }
 
-.nav ul {
+.navScrolled {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.navContent {
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  gap: 20px;
 }
 
-.nav ul li {
-  list-style: none;
-  transform: none;
-  transition: all 0.1s ease-in-out;
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  min-width: 0;
 }
 
-.nav ul li:hover {
+.logo {
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
+  letter-spacing: -1px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.logo:hover {
   transform: scale(1.05);
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.navMenu li a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navMenu li a:hover {
+  color: #b3b3b3;
+}
+
+.navMenu li a.active {
+  color: white;
+  font-weight: 700;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 20px;
+  margin-right: 80px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  width: auto;
+  overflow: hidden;
+}
+
+.searchFormOpen {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.searchForm:focus-within {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  width: 0;
+  padding: 0;
+  line-height: 1.5;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.searchFormOpen .searchInput {
+  width: 200px;
+  opacity: 1;
+  padding: 6px 4px;
+}
+
+.searchForm:focus-within .searchInput {
+  width: 200px;
+  opacity: 1;
+  padding: 6px 4px;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.searchButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.searchButton:hover {
+  transform: scale(1.1);
+}
+
+.navLogin {
+  flex-shrink: 0;
+}
+
+.navLogin a {
+  color: #e5e5e5;
+  font-size: 16px;
+}
+
+.navLogin a:hover {
+  color: #b3b3b3;
+}
+
+.navLogin a.active {
+  color: white;
+  font-weight: 700;
 }

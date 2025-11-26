@@ -1,3 +1,117 @@
+/* 상단 히어로(큰 배너) */
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: 90vh;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 이미지/영상 공통으로 풀스크린 덮기 */
+.heroBackdrop {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) scale(1.35);
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.heroOverlay {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  max-width: 40%;
+  z-index: 10;
+}
+
+.heroOverlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroOverlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #e5e5e5;
+  margin-bottom: 1.5rem;
+}
+
+/* 섹션 공통 */
+.section {
+  margin-bottom: 30px;
+  padding: 0 40px;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* 섹션 헤더: 제목 + 버튼 */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sectionControls {
+  display: flex;
+  gap: 8px;
+}
+
+.navButton {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navButton:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* 가로 슬라이더: 한 화면에 10개 정도만 보이도록 */
+.rowSlider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(120px, 1fr); /* 카드 크기(가로폭) 조정 */
+  gap: 12px;
+  overflow: hidden; /* 스크롤 대신 슬라이드 느낌 */
+}
+
+/* 기존 row(스크롤용)는 안 쓰면 지워도 됨 */
+.row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.row::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+/* 필요 없으면 container도 지워도 됨 */
 .container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -5,4 +119,36 @@
   max-width: 90%;
   width: 100%;
   margin: 0 auto;
+}
+
+.muteButton {
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(42, 42, 42, 0.6);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.muteButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+.muteButton:active {
+  transform: scale(0.98);
+}
+
+.muteIcon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }
